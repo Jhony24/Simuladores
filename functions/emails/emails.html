@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/emails.css">
+</head>
+
+
+<body>
+    <table style="max-width:600px;max-height:10px;padding:10px;margin:0 auto;border-collapse:collapse">
+        <tbody>
+            <tr>
+                <td style="background-color:#d5c234;text-align:left;padding:0">
+                    <a href="https://www.lorente.fin.ec/" target="_blank">
+                        <img style="max-width: 150px; display:block; margin:1.5% 3%" src="https://www.lorente.fin.ec/sites/all/themes/business_responsive_theme/logo.png" data-saferedirecturl="https://www.google.com/url?q=https://www.lorente.fin.ec/&source=gmail&ust=1603817036809000&usg=AFQjCNEEojJBqDsB-0tCFc48IBs7TDfJhg"/>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#ecf0f1">
+                    <div style="color:#34495e;margin:4% 10% 2%;text-align:justify;font-family:sans-serif">
+                        <h2 style="color:#d5c234;margin:0 0 7px;text-align:center">COOPERATIVA DE AHORRO Y CRÉDITO PADRE JULIÁN LORENTE</h2>
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%">Estimado/a {{ nombres }} :
+                        </p>
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%"> Usted ha solicitado un turno para la agencia {{ agencia }}</p>
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%"><b>Información de turno</b>
+                        </p>
+                        <p style="margin:2px;font-size:12px;color:#000000"> Fecha {{fecha}} y Hora {{ hora }}</p>
+                        <p style="margin:2px;font-size:12px;color:#000000"> Oficial de servicio {{ oficial }}</p>
+                        <br>
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%">Esta información es
+                            unicamente para la
+                            persona que ha generado el turno.
+                        </p>
+
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%">
+                            Verifique la numeración del PDF con la del archivo adjunto y recuerde llevarlo el día de su cita.
+                        </p>
+
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:5%"><b>Númeración de PDF: </b>
+                            {{ numPdf }}
+                        </p>
+
+                        <p style="margin:2px;font-size:12px;color:#000000;margin-top:2%"><b>Código de la Cita: </b>
+                            {{ codigoCita }}
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#d5c234;text-align:center;padding-top:15px;padding-bottom:15px">
+                    <p style="margin:2px;font-size:12px;color:#007196;text-decoration:none"> Call center 1800 57 11 35  &nbsp;|&nbsp; Mercadillo entre Olmedo y Juan José Peña &nbsp;|&nbsp; <a href="https://www.lorente.fin.ec/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.lorente.fin.ec/&amp;source=gmail&amp;ust=1603817036809000&amp;usg=AFQjCNEEojJBqDsB-0tCFc48IBs7TDfJhg">https://www.lorente.fin.ec/</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

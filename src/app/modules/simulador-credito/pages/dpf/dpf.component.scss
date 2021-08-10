@@ -1,0 +1,273 @@
+.container {
+  background-color: #F7F7F7F7;
+  color: #007196;
+  position: relative;
+  padding: 0;
+  margin-top: 4vw;
+}
+.header{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: calc(18vw - 4vw);
+  padding: 2vw 0;
+  background-image: url(../../../../../assets/simulador.jpg);
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header .info-header {
+  position: absolute;
+  right: 1vw;
+  top: 0;
+  width: calc(50% - 2vw);
+  height: calc(100% - 2vw);
+  padding: 1vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .info-header span {
+  font-weight: 800;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  margin: 1vw auto;
+}
+
+.header .info-header .buttons {
+  width: calc(100% - 2vw);
+  height: fit-content;
+  padding: 0 1vw;
+}
+
+.header .info-header .buttons .btn {
+  width: calc(50% - 2vw);
+  padding: 0 1vw;
+  height: 100%;
+  text-align: center;
+  color: #007196;
+  background-color: #D5C234;
+  border-radius: 5px;
+  border-color: #007196;
+  transition: all 0.1s 0.1s ease-in;
+}
+
+.header .info-header .buttons .btn:hover {
+  transform: scale(0.96);
+  transition: all 0.1s 0.1s ease-in-out;
+}
+
+.infoLegal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #F7F7F7F7;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #007196;
+  margin: 2vw auto;
+  padding: 0 1vw;
+  width: calc(100% - 2vw);
+}
+
+.infoLegal span {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 2vw;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.container .content {
+  margin: 0;
+  padding: 0;
+}
+
+.container .content .bloque {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.titulo-form {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cont-buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.cont-buttons .boton {
+  width: calc(50% - 1vw);
+  margin: 0 0.5vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-buttons .boton  .btnCalcular {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007196;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #007196;
+  letter-spacing: 0.01vw;
+  font-size: 14px;
+  transition: all 0.1s 0.1s ease-in;
+
+}
+
+.cont-buttons .boton  .btnLimpiar {
+  width: 100%;
+  text-align: center;
+  color: #d5c234;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d5c234;
+  letter-spacing: 0.01vw;
+  font-size: 14px;
+  transition: all 0.1s 0.1s ease-in;
+}
+
+.btnCalcular:hover {
+  transform: scale(0.96);
+  transition: all 0.1s 0.2s ease-in-out;
+}
+
+.btnCalcular:focus {
+  border: none;
+}
+
+.btnLimpiar:hover {
+  transform: scale(0.96);
+  transition: all 0.1s 0.2s ease-in-out;
+}
+
+.btnLimpiar:focus {
+  border: none;
+}
+
+.botonesSeleccion {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.botonesSele {
+  width: 40%;
+  height: 35px;
+  text-align: center;
+  color: #007196;
+  background-color: #D5C234;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #007196;
+}
+
+.btnCalcular {
+  text-align: center;
+  color: #D5C234;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #D5C234;
+}
+
+.seleccionado {
+  background-color: #cad5da;
+  transition: all 0.1s 0.1s ease-in;
+}
+.totalRecibir{
+  background-color: #D5C234;
+}
+
+.leftDPF {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.leftDPF form {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+}
+
+.right {
+  padding-top: 2%;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 1%;
+  padding: 0px;
+}
+
+.content1 {
+  margin-top: 1%;
+}
+
+.divBotonSelect {
+  bottom: 0;
+  position: relative;
+  justify-items: auto;
+}
+
+.form-control {
+  color: #007196;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 770px) {
+  .cont-buttons {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cont-buttons .boton {
+    width: 100%;
+    margin: 0 0 8px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,124 @@
+.form-control {
+  color: #007196;
+}
+
+.form-control::placeholder {
+  color: #66a4b9;
+  opacity: 2;
+}
+.cont-buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.cont-buttons .boton {
+  width: calc(50% - 1vw);
+  margin: 0 0.5vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-buttons .boton  .btnCalcular {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007196;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #007196;
+  letter-spacing: 0.01vw;
+  font-size: 14px;
+  transition: all 0.1s 0.1s ease-in;
+}
+
+.cont-buttons .boton  .btnLimpiar {
+  width: 100%;
+  text-align: center;
+  color: #d5c234;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d5c234;
+  letter-spacing: 0.01vw;
+  font-size: 14px;
+  transition: all 0.1s 0.1s ease-in;
+}
+
+.btnCalcular:hover {
+  transform: scale(0.96);
+  transition: all 0.1s 0.2s ease-in-out;
+}
+
+.btnCalcular:focus {
+  border: none;
+}
+
+.btnLimpiar:hover {
+  transform: scale(0.96);
+  transition: all 0.1s 0.2s ease-in-out;
+}
+
+.btnLimpiar:focus {
+  border: none;
+}
+.rightAP {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.rightAP form {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+}
+
+.left {
+  padding-top: 8%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.totalRecibir {
+  background-color: #D5C234;
+}
+
+.titulo-form {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+@media only screen and (min-width: 576px) and (max-width: 770px) {
+  .cont-buttons {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cont-buttons .boton {
+    width: 100%;
+    margin: 0 0 8px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

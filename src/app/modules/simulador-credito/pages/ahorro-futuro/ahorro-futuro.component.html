@@ -1,0 +1,76 @@
+<div class="rightAP">
+  <form>
+
+    <!-- TIPO DE AHORRO-->
+    <h6 class="titulo-form">AHORRO PROGRAMADO</h6>
+    <div class="form-row">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label">Tipo de Ahorro</label>
+        <select [(ngModel)]="type" [disabled]="isEnabled" class="form-control" name=type (change)="typeSelected()">
+          <option value="" selected disabled>Selecciona tu Agencia</option>
+          <option *ngFor="let typAhorro of typeAhorro" [ngValue]="typAhorro.type">
+            {{ typAhorro.type }}
+          </option>
+        </select>
+
+      </div>
+    </div>
+
+    <!-- MONTO MINIMO -->
+    <div class="form-row">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label ">Monto (mínimo para apertura)<span>*</span></label>
+        <input type="number" min="0" class="form-control rg-input" [(ngModel)]="amount" name=amount
+          [disabled]="isEnabled" (change)="calculateAmountMin($event)" />
+
+      </div>
+    </div>
+
+    <!-- DEPOSITO MINIMO -->
+    <div class="form-row">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label ">Depósito (Aporte mensual mínimo ($))<span>*</span></label>
+        <input type="number" min="0" class="form-control rg-input" [(ngModel)]="deposit" name=deposit
+          [disabled]="isEnabled" (change)="calculateDepositMin($event)" />
+
+      </div>
+    </div>
+
+    <!-- TIEMPO MINIMO -->
+    <div class="form-row">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label ">Tiempo (mínimo de meses para apertura)<span>*</span></label>
+        <input [disabled]="isEnabled" type="number" min="0" class="form-control rg-input" [(ngModel)]="time" name=time
+          (change)="calculateTimeMin($event)" />
+
+      </div>
+    </div>
+
+    <!-- TOTAL RECIBIR-->
+    <div class="form-row" *ngIf="totalReceive != undefined">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label" *ngIf="showTotal === true">Total a Recibir ($)</label>
+        <input *ngIf="showTotal === true" type="text" readonly class="form-control rg-input totalRecibir"
+          [value]="'$' + this.totalReceive" />
+      </div>
+    </div>
+
+    <div class="form-row" *ngIf="totalReceive != undefined">
+      <div class=" form-group col-12 m-b-0 ">
+        <label class="rg-label" *ngIf="showTotal === true">Interés Ganado</label>
+        <input *ngIf="showTotal === true" type="text" readonly class="form-control rg-input"
+          [value]="this.interesTotal + '$'" />
+      </div>
+    </div>
+
+    <!-- BUTON CALCULAR-->
+    <div class="cont-buttons">
+      <div class="a boton">
+        <button mat-raised-button class="btnCalcular" (click)="calculeAP()">Calcular</button>
+      </div>
+      <div class="b boton">
+        <button mat-raised-button class="btnLimpiar" (click)="cleanAP()">Nueva Consulta</button> &nbsp;
+      </div>
+    </div>
+  </form>
+</div>

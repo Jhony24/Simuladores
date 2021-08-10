@@ -1,0 +1,184 @@
+<div class="container">
+    <div class="row infoDate col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <!-- <span class="tittlePri"><b>!La Julián cuida de ti y los tuyos!</b> </span>
+        <span>Agenda tu cita y evita la espera. </span> -->
+    </div>
+    <div class="row content">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 left">
+            <!-- INFORMACION PERSONAL -->
+
+            <label class="tittle"><b>Información Personal</b> </label>
+            <form [formGroup]="createDate" (ngSubmit)="onSubmit()" class="form">
+                <div class="form-row">
+                    <div class=" form-group col-12 m-b-0 ">
+                        <label class="rg-label "><i class="fas fa-user"></i>&nbsp; Nombres y Apellidos
+                            <span>*</span></label>
+                        <input type="text" formControlName="nombres" class="form-control rg-input "
+                            [ngClass]="{ 'is-invalid': submitted && f.nombres.errors } "
+                            placeholder="NOMBRES Y APELLIDOS" />
+                        <div *ngIf="submitted && f.nombres.errors " class="invalid-feedback ">
+                            <div *ngIf="f.nombres.errors.required ">Nombres y Apellidos obligatorio</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class=" form-group col-6 m-b-0 ">
+                        <label class="rg-label "><i class="far fa-address-card"></i>&nbsp;Cédula <span>*</span></label>
+                        <input type="text " formControlName="cedula" class="form-control rg-input "
+                            [ngClass]="{ 'is-invalid': submitted && f.cedula.errors } "
+                            placeholder="CÉDULA O PASAPORTE" />
+                        <div *ngIf="submitted && f.cedula.errors " class="invalid-feedback ">
+                            <div *ngIf="f.cedula.errors.required ">Cédula obligatorio</div>
+                        </div>
+                    </div>
+
+                    <div class=" form-group col-6 m-b-0 ">
+                        <label class="rg-label "><i class="fas fa-phone"></i>&nbsp; Celular <span>*</span></label>
+                        <input type="text " formControlName="telefono" class="form-control rg-input "
+                            [ngClass]="{ 'is-invalid': submitted && f.telefono.errors } "
+                            placeholder="Ejm. 0987654321" />
+                        <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                          <div *ngIf="f.telefono.errors.required ">Teléfono obligatorio</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class=" form-group col-12 m-b-0 ">
+                        <label class="rg-label  "><i class="far fa-envelope"></i>&nbsp; Email</label>
+                        <input formControlName="email" class="form-control place "
+                            [ngClass]="{ 'is-invalid': submitted && f.email.errors } " type="text "
+                            placeholder="USUARIO@EXAMPLE.COM ">
+                        <div *ngIf="submitted && f.email.errors " class="invalid-feedback ">
+                            <div *ngIf="f.email.errors.email ">Ingrese un correo válido</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class=" form-group col-12 m-b-0 ">
+                        <label for="exampleFormControlSelect1 " class="rg-label"><i class="fas fa-warehouse"></i>&nbsp;
+                            Agencias</label>
+
+                        <select [(ngModel)]="agencieOffi" formControlName="agencia" class="form-control"
+                            name=agencieOffi (change)="agencieOffiSelect(this.currentDay)">
+                            <option value="" selected disabled>Selecciona tu Agencia</option>
+                            <option *ngFor="let elem of agencies" [ngValue]="elem.id" ><b>{{ elem.name }}</b>  - {{ elem.dire }}</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class=" form-group col-12 m-b-0 ">
+                        <label for="exampleFormControlSelect1" class="rg-label">Seleccione el tipo de servicio
+                            requerido</label>
+                        <div *ngFor="let item of services; let i = index;">
+                            <input type="radio" formControlName="servicio" id="radio{{i}}" [(ngModel)]="service"
+                                name="servicio" [value]=item.type (change)="serviceSelected()"> {{item.name}}
+                        </div>
+
+                    </div>
+
+                    <div class="products" *ngIf="bandService === 0">
+                        <div class="productTittle"><span>PRODUCTOS (selecciona tu requerimiento)</span> </div>
+                        <!--
+                        <div *ngFor="let item of productsAC" (click)="selectProduct(item.nameProduct)"
+                            class="productLittle"
+                            [ngClass]="{'productLittleSelected': selectedProduct=== item.nameProduct}">
+                            <span>{{item.nameProduct}}</span>
+                        </div>
+                        -->
+                        <div *ngFor="let item of productsAC; let i = index;">
+                            <input type="radio" formControlName="producto" id="radioS{{i}}"
+                                [(ngModel)]="selectedProduct " name="producto" [value]=item.nameProduct
+                                (change)="selectProduct(item.nameProduct)"> {{item.nameProduct }}
+                        </div>
+                    </div>
+                    <div class="products" *ngIf="bandService === 1">
+                        <div class="productTittle"><span>PRODUCTOS (selecciona tu requerimiento)</span> </div>
+                        <!--
+                        <div *ngFor="let item of productsCredit" (click)="selectProduct(item.nameProduct)"
+                            class="productLittle"
+                            [ngClass]="{'productLittleSelected': selectedProduct=== item.nameProduct}">
+                            <span>{{item.nameProduct}}</span>
+                        </div>
+                        -->
+
+                        <div *ngFor="let item of productsCredit; let i = index;">
+                            <input type="radio" formControlName="producto" id="radioS{{i}}"
+                                [(ngModel)]="selectedProduct " name="producto" [value]=item.nameProduct
+                                (change)="selectProduct(item.nameProduct)"> {{item.nameProduct }}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group col-12 m-b-0  divBotonIngresar">
+                    <button class="btn btn-block btn-Ingresar " type="submit ">GENERAR CITA</button>
+                </div>
+
+                <div class="form-group col-12 m-b-0 desplazate">
+                    <span><b>Por favor, desplázate hacia abajo y seleccione el horario &#8595; </b> </span>
+                </div>
+                <div>
+                    <label class="tittle" *ngIf="finalizado === true"><b> <a class="descargar" id="myCheck"
+                                href="{{ URLPublica }}" target="_blank" download>Descargar PDF</a></b> </label>
+
+                </div>
+
+            </form>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 rightFondo " *ngIf="bandImagen === true">
+
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 right " *ngIf="bandHours === true">
+
+            <div class="form-group col-12 m-b-0 selectDate">
+                <span class="selectHorario">Selecciona el Horario: </span>
+                <span (click)="sumaDia(-1)"> <i class="fas fa-chevron-left"></i> </span>
+                <span class="fechaString"> <input type="text" readonly matInput [value]=this.currentDayString> </span>
+                <span (click)="sumaDia(1)"><i class="fas fa-chevron-right"></i></span>&nbsp;
+                <!-- <span class="iconCalendar"><i class="far fa-calendar-alt"></i></span> -->
+                <span class="iconCalendar">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" (dateChange)="addEvent('change', $event)"
+                            [formControl]="date" class="labelDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </span>
+            </div>
+            <div class="form-group col-12 m-b-0 selectDate">
+                <span><b>Por favor seleccione el horario en color azul, nuestro asesor lo atenderá con gusto </b>
+                </span>
+            </div>
+            <div class="form-group col-12 m-b-0 ">
+
+
+                <div class="hoursOfficers" *ngFor="let offic of numOfficers; let i = index">
+                    <div id="rectangle">
+                        <b>Oficial {{i+1}} {{ offic.name }}</b>
+                    </div>
+                    <div class="overflowHours">
+                        <div *ngFor="let hoursD of  hoursDayMorning"
+                            [ngClass]="{'hoursDayNone': existe(offic,hoursD.hour), 'hourSelected': hoursD.hour === hourChange && this.selectedOfficer === offic.id}"
+                            class="hoursDay" (click)="selectHour(hoursD.hour, offic.id)">
+                            {{ hoursD.hour}}
+                        </div>
+                        <div *ngFor="let hoursD of hoursDayLate "
+                            [ngClass]="{'hoursDayNone': existe2(offic,hoursD.hour), 'hourSelected': hoursD.hour === hourChange && this.selectedOfficer === offic.id}"
+                            class="hoursDay" (click)="selectHour(hoursD.hour, offic.id)">
+                            {{ hoursD.hour}}
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

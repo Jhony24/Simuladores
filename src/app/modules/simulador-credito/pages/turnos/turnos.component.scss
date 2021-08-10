@@ -1,0 +1,294 @@
+.container {
+    background-color: #f7f7f7;
+    color: #007196;
+    padding: 0px;
+}
+
+.infoDate {
+    width: 100%;
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+span {
+    font-size: 16px;
+}
+
+.rg-input,
+.place {
+    text-transform: uppercase;
+}
+
+.tittlePri {
+    font-size: 28px;
+}
+
+.tittle {
+    font-size: 20px;
+    margin-bottom: 2%;
+}
+
+.productTittle {
+    color: #ffffff;
+}
+
+.left {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.right {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.rightFondo {
+    margin-left: 5%;
+    margin-top: 5%;
+    background-image: url(../../../../../assets/chicas.png);
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    max-width: 420px;
+    max-height: 460px;
+}
+
+.content {
+    margin-top: 3%;
+}
+
+.form-control {
+    color: #007196;
+}
+
+.form-control::placeholder {
+    color: #66a4b9;
+    opacity: 2;
+}
+
+.selectDate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+
+.fechaString {
+    text-align: center;
+}
+
+.selectHorario {
+    margin-right: 1%;
+}
+
+.iconCalendar {
+    width: 4%;
+    height: 4%;
+    margin-top: -3%;
+}
+
+.labelDate {
+    display: none;
+}
+
+.iconCalendar {
+    width: 10%;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    width: 10%;
+}
+
+::ng-deep .mat-form-field {
+    width: 10%;
+}
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+    width: 3em;
+    color: #007196;
+}
+
+/* DESGINS */
+
+.infoDate {
+    width: 100%;
+    height: 278px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #e8f0f3;
+    background-image: url(../../../../../assets/banner.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.divBotonIngresar {
+    margin-top: 10%;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+.desplazate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .desplazate {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+    }
+}
+
+.btn-Ingresar {
+    background-color: #d5c234;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #007196;
+    color: #007196;
+    margin-left: 50%;
+}
+
+.rg-label {
+    font-size: 16px;
+}
+
+.hoursOfficers {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20%;
+    text-align: center;
+    align-items: center;
+}
+
+.overflowHours {
+    overflow-y: auto;
+    width: 100%;
+    height: 200px;
+}
+
+#rectangle {
+    margin-left: 20%;
+    margin-bottom: 2%;
+    width: 60%;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #007196;
+}
+
+.hoursDay {
+    height: auto;
+    /*
+    float: left;
+    position: relative;
+    */
+    width: 40%;
+    padding: 1%;
+    margin-left: 30%;
+    margin-bottom: 1%;
+    background-color: #007196;
+    text-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.hourSelected {
+    background-color: #d5c234;
+    color: #ffffff;
+}
+
+.hoursDayNone {
+    height: auto;
+    /*
+    float: left;
+    position: relative;
+    */
+    width: 40%;
+    padding: 1%;
+    margin-left: 30%;
+    margin-bottom: 1%;
+    text-align: center;
+    border-radius: 5px;
+    pointer-events: none;
+    background-color: #d5c234;
+    color: #ffffff;
+}
+
+p.perm {
+    transition: aquamarine 0s 9999999s;
+}
+
+.productLittleSelected {
+    background-color: #007196;
+    color: #ffffff;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+}
+
+.products {
+    background-color: #e6e6e6;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.products span {
+    padding-left: 5%;
+}
+
+.products .productTittle {
+    background-color: #007196;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid #ffffff;
+}
+.descargar {
+    color: #007196;
+}
+
+::ng-deep .alert .mat-simple-snackbar-action {
+    color: #007196;
+}
+
+//Seet Alert
+::ng-deep .swal2-title {
+    color: #007196;
+}
+
+::ng-deep .swal2-content {
+    color: #007196;
+}
+
+::ng-deep .swal2-styled.swal2-confirm {
+    background-color: #007196 !important;
+}
+
+::ng-deep svg {
+    margin-top: 10px !important;
+    width: 100px !important;
+}

@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row header ">
+    <div class="info-header">
+      <span>SIMULA TUS AHORROS</span>
+      <div class="buttons form-raw">
+        <button class="btn" (click)="tabActive=1; changeTab(1);">Inversión</button> &nbsp;
+        <button class="btn" (click)="tabActive=2; changeTab(3);">Créditos</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row infoLegal col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <span>
+      La información que consta en la presente simulación son de carácter informativo y no constituyen una pre
+      aprobación de crédito. La información que se utiliza en este simulador se actualiza de manera continua y la tasa
+      de interés utilizada puede haber sufrido alguna modificación. Para calificar y obtener un crédito por favor
+      acérquese a la agencia más cercana, nuestros asesores le brindarán una atención oportuna y eficiente.
+    </span>
+  </div>
+
+  <div class="row content " *ngIf="tabActive===1">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" (click)="selectAhorro(0)"
+      [ngClass]="{'seleccionado': this.selectAhorroBand === 0}">
+      <!-- DPL -->
+
+      <div class="leftDPF">
+        <form>
+          <div>
+            <h6>DEPOSITOS PLAZO FIJO (DPF)</h6>
+          </div>
+
+          <div class="form-row">
+            <div class=" form-group col-12 m-b-0 ">
+              <label class="rg-label ">Monto (mínimo $100)<span>*</span></label>
+              <input type="number" min="100" class="form-control rg-input" [(ngModel)]="amount" name=amount
+                (change)="calculateMin($event)" [disabled]="isEnabled" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class=" form-group col-12 m-b-0 ">
+              <label class="rg-label">Frecuencia de Pago</label>
+              <select [(ngModel)]="frequeSelected" [disabled]="isEnabled" name=frequeSelected class="form-control"
+                (change)="frequeSelect()">
+                <option value="" selected disabled>Selecciona tu Frecuencia de Pago</option>
+                <option *ngFor="let freq of frecuency" [ngValue]="freq.name">{{ freq.name }}</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="form-row">
+            <div class=" form-group col-12 m-b-0 ">
+              <label class="rg-label ">Tiempo (mínimo 30 días) <span>*</span></label>
+              <input type="number" min="30" class="form-control rg-input" [(ngModel)]="months" name=months
+                [disabled]="isEnabled" (change)="calculateMinDias($event)" />
+
+            </div>
+          </div>
+
+          <div class="form-row" *ngIf="totalReceive != undefined">
+            <div class=" form-group col-12 m-b-0 ">
+              <label class="rg-label" *ngIf="showMensual === true">Porcentaje de interés - Acreditación mensual</label>
+              <input *ngIf="showMensual === true" type="text" readonly class="form-control rg-input"
+                [value]="this.ratea + '%'" />
+              <label class="rg-label" *ngIf="showVencimiento === true">Porcentaje de interés - Acreditación al
+                Vencimiento</label>
+              <input *ngIf="showVencimiento === true" type="text" readonly class="form-control rg-input"
+                [value]="this.rateb + '%'" />
+            </div>
+          </div>
+
+          <div class="form-row" *ngIf="totalReceive != undefined">
+            <div class=" form-group col-12 m-b-0 ">
+              <label class="rg-label ">Total a Recibir: ($)</label>
+              <input type="text" readonly class="form-control rg-input totalRecibir"
+                [value]="'$' + this.totalReceive" />
+            </div>
+          </div>
+
+          <div class="cont-buttons">
+            <div class="a boton">
+              <button mat-raised-button class="btnCalcular" (click)="newCalculeDPF()" name="clcDPF">Calcular</button>
+            </div>
+            <div class="b boton">
+              <button mat-raised-button class="btnLimpiar" (click)="cleanDPF()" name="clean">Nueva Consulta</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+
+    <div class="col-l-6 col-md-6 col-sm-6 col-xs-6 left" (click)="selectAhorro(1)"
+      [ngClass]="{'seleccionado': this.selectAhorroBand === 1}">
+      <!-- AHORRO FUTURO-->
+      <app-ahorro-futuro></app-ahorro-futuro>
+
+
+    </div>
+  </div>
+
+  <div class="row content1 " *ngIf="tabActive===3 ">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+      <app-creditos></app-creditos>
+
+    </div>
+
+
+  </div>
+</div>

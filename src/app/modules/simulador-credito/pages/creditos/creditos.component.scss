@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    // padding: 4px !important;
+    text-align: center;
+    color: #007196;
+
+}
+
+.textInfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+
+
+.botonesCredito {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.tablaCredito {
+    margin-bottom: 5%;
+}
+
+.form-control {
+    color: #007196;
+}
+
+
+::ng-deep .mat-header-row {
+   background-color: #D5C234;
+}
