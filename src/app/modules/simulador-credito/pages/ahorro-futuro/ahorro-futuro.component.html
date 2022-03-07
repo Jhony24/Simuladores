@@ -7,7 +7,7 @@
       <div class=" form-group col-12 m-b-0 ">
         <label class="rg-label">Tipo de Ahorro</label>
         <select [(ngModel)]="type" [disabled]="isEnabled" class="form-control" name=type (change)="typeSelected()">
-          <option value="" selected disabled>Selecciona tu Agencia</option>
+          <option value="" selected disabled>Selecciona tu Ahorro</option>
           <option *ngFor="let typAhorro of typeAhorro" [ngValue]="typAhorro.type">
             {{ typAhorro.type }}
           </option>

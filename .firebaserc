@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "simuladorespjl"
-  }
+    "default": "simuladorespjl",
+    "simuladorespjl": "simuladorespjl"
+  },
+  "targets": {}
 }

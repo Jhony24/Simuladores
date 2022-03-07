@@ -27,7 +27,7 @@ export class AhorroFuturoComponent implements OnInit {
 	isEnabled: boolean;
 	showTotal: boolean;
 
-	typeAhorro = [
+	/*typeAhorro = [
 		{ type: 'Programado', rate: 4, time: 6, amount: 1, deposit: 1, bonus: 1 },
 		{ type: 'Programado Infantil', rate: 4, time: 6, amount: 15, deposit: 10, bonus: 1 },
 		{ type: 'Programado Escolar', rate: 5, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
@@ -35,6 +35,17 @@ export class AhorroFuturoComponent implements OnInit {
 		{ type: 'Programado Ejecutivo', rate: 6, time: 12, amount: 50, deposit: 35, bonus: 1.50 },
 		{ type: 'Programado Gold', rate: 7, time: 12, amount: 300, deposit: 50, bonus: 1.75 },
 		{ type: 'Programado Futuro', rate: 7, time: 24, amount: 50, deposit: 20, bonus: 1.75 },
+	];*/
+
+	//Tasa 2022
+	typeAhorro = [
+		{ type: 'Programado', rate: 5, time: 6, amount: 1, deposit: 1, bonus: 1 },
+		{ type: 'Programado Infantil', rate: 5, time: 6, amount: 15, deposit: 10, bonus: 1 },
+		{ type: 'Programado Escolar', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Navideño', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Ejecutivo', rate: 7, time: 12, amount: 50, deposit: 35, bonus: 1.50 },
+		{ type: 'Programado Gold', rate: 8, time: 12, amount: 300, deposit: 50, bonus: 1.75 },
+		{ type: 'Programado Futuro', rate: 9, time: 24, amount: 50, deposit: 20, bonus: 1.75 },
 	];
 
 	ngOnInit(): void {
