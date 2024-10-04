@@ -38,13 +38,35 @@ export class AhorroFuturoComponent implements OnInit {
 	];*/
 
 	//Tasa 2022
-	typeAhorro = [
+	/*typeAhorro = [
 		{ type: 'Programado', rate: 5, time: 6, amount: 1, deposit: 1, bonus: 1 },
 		{ type: 'Programado Infantil', rate: 5, time: 6, amount: 15, deposit: 10, bonus: 1 },
 		{ type: 'Programado Escolar', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
 		{ type: 'Programado Navideño', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
 		{ type: 'Programado Ejecutivo', rate: 7, time: 12, amount: 50, deposit: 35, bonus: 1.50 },
 		{ type: 'Programado Gold', rate: 8, time: 12, amount: 300, deposit: 50, bonus: 1.75 },
+		{ type: 'Programado Futuro', rate: 9, time: 24, amount: 50, deposit: 20, bonus: 1.75 },
+	];*/
+
+	//Tasa 2023
+	/*typeAhorro = [
+		{ type: 'Programado', rate: 6, time: 6, amount: 1, deposit: 1, bonus: 1 },
+		{ type: 'Programado Infantil', rate: 6, time: 6, amount: 15, deposit: 10, bonus: 1 },
+		{ type: 'Programado Escolar', rate: 7, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Navideño', rate: 7, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Ejecutivo', rate: 8, time: 12, amount: 50, deposit: 35, bonus: 1.50 },
+		{ type: 'Programado Gold', rate: 9, time: 12, amount: 300, deposit: 50, bonus: 1.75 },
+		{ type: 'Programado Futuro', rate: 9, time: 24, amount: 50, deposit: 20, bonus: 1.75 },
+	];*/
+
+	//Tasa 2023 septiembre
+	typeAhorro = [
+		{ type: 'Programado', rate: 6, time: 6, amount: 1, deposit: 1, bonus: 1 },
+		{ type: 'Programado Infantil', rate: 6, time: 6, amount: 15, deposit: 10, bonus: 1 },
+		{ type: 'Programado Escolar', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Navideño', rate: 6, time: 6, amount: 20, deposit: 10, bonus: 1.25 },
+		{ type: 'Programado Ejecutivo', rate: 8, time: 12, amount: 50, deposit: 35, bonus: 1.50 },
+		{ type: 'Programado Gold', rate: 9, time: 12, amount: 300, deposit: 50, bonus: 1.75 },
 		{ type: 'Programado Futuro', rate: 9, time: 24, amount: 50, deposit: 20, bonus: 1.75 },
 	];
 
@@ -114,19 +136,22 @@ export class AhorroFuturoComponent implements OnInit {
 		const interes1 =  newSaldo * newRate / 360 * 30;
 
 		newSaldo = newSaldo + interes1;
+		console.log(newSaldo +"rate:  "+newRate+" interes1: "+interes1+" ");
 
 		interesTotal += interes1;
-		for (let index = 0; index < this.time - 1; index++) {
+		for (let index = 0; index < this.time-1; index++) {
 			const saldoC = newSaldo   + this.deposit;
 			this.valorNuevo=saldoC;
+			console.log(this.valorNuevo+" "+saldoC);
 			newInteres = saldoC * newRate / 360 * 30 ;
 			newSaldo = newSaldo + newInteres + this.deposit;
 			interesTotal += newInteres;
+			console.log("valor nuevo: "+this.valorNuevo+" newinteres: "+newInteres+" new saldo: "+newSaldo+" interesTotal: "+interesTotal);
 		}
 
 		this.showTotal = true;
-		console.log(this.valorNuevo);
-		var interesNuevo = ((this.deposit*this.time))+this.amount - this.valorNuevo;
+		console.log(this.valorNuevo+" "+this.amount+" "+this.deposit+ " "+this.time);
+		var interesNuevo = (this.deposit*this.time)+this.amount - this.valorNuevo;
 		console.log(interesNuevo);
 		this.totalReceive = this.valorNuevo.toFixed(2);
 		this.interesTotal = (interesNuevo*-1).toFixed(2);

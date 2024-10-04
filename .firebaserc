@@ -1,7 +1,9 @@
 {
   "projects": {
     "default": "simuladorespjl",
-    "simuladorespjl": "simuladorespjl"
+    "simuladorespjl": "simuladorespjl",
+    "simuladorpjl": "simulador-c655a"
   },
-  "targets": {}
+  "targets": {},
+  "etags": {}
 }

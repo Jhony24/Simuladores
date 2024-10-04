@@ -62,7 +62,7 @@ export class DpfComponent implements OnInit {
   //nuevos
   //rate a - pago mensual - nominal
   //rate b - pago vencimiento - efectiva
-  datos = [
+  /*datos = [
     { dias: '0 - 30', rate_a: '4.07', rate_b: '4.00', pos: 0 },
     { dias: '45 - 60', rate_a: '4.15', rate_b: '4.25', pos: 1 },
     { dias: '61 - 90', rate_a: '4.90', rate_b: '5.00', pos: 2 },
@@ -70,6 +70,75 @@ export class DpfComponent implements OnInit {
     { dias: '121 - 180', rate_a: '5.80', rate_b: '6.00', pos: 4 },
     { dias: '181 - 270', rate_a: '6.75', rate_b: '7.00', pos: 5 },
     { dias: '271 - 360', rate_a: '7.45', rate_b: '7.70', pos: 6 },
+  ];*/
+
+  //alco fecha 2022
+  /*datos = [
+    { dias: '0 - 30', rate_a: '4.15', rate_b: '4.00', pos: 0 },
+    { dias: '45 - 60', rate_a: '4.15', rate_b: '4.15', pos: 1 },
+    { dias: '61 - 90', rate_a: '5.05', rate_b: '5.15', pos: 2 },
+    { dias: '91 - 120', rate_a: '5.40', rate_b: '5.65', pos: 3 },
+    { dias: '121 - 180', rate_a: '5.65', rate_b: '5.90', pos: 4 },
+    { dias: '181 - 270', rate_a: '6.35', rate_b: '6.65', pos: 5 },
+    { dias: '271 - 360', rate_a: '7.05', rate_b: '7.35', pos: 6 },
+  ];*/
+
+  //alco fecha diciembre 2022
+  /*datos = [
+    { dias: '30 - 60', rate_a: '0.00', rate_b: '4.15', pos: 0 },
+    { dias: '61 - 90', rate_a: '5.05', rate_b: '5.15', pos: 1 },
+    { dias: '91 - 120', rate_a: '5.40', rate_b: '5.65', pos: 2 },
+    { dias: '121 - 180', rate_a: '5.65', rate_b: '5.90', pos: 3 },
+    { dias: '181 - 270', rate_a: '6.70', rate_b: '7.00', pos: 4 },
+    { dias: '271 - 360', rate_a: '7.40', rate_b: '7.70', pos: 5 },
+  ];*/
+
+  //alco fecha enero 2023
+  //rate a - pago mensual
+  //rate b - pago vencimiento
+  /*datos = [
+    { dias: '30 - 60', rate_a: '0.00', rate_b: '4.25', pos: 0 },
+    { dias: '61 - 90', rate_a: '5.15', rate_b: '5.25', pos: 1 },
+    { dias: '91 - 120', rate_a: '5.50', rate_b: '5.75', pos: 2 },
+    { dias: '121 - 180', rate_a: '5.85', rate_b: '6.10', pos: 3 },
+    { dias: '181 - 270', rate_a: '6.90', rate_b: '7.20', pos: 4 },
+    { dias: '271 - 360', rate_a: '7.60', rate_b: '7.90', pos: 5 },
+  ];*/
+
+  //alco fecha enero 2023
+  //rate a - pago mensual  nominal
+  //rate b - pago vencimiento nominal
+  /*datos = [
+    { dias: '30 - 60', rate_a: '0.00', rate_b: '4.25', pos: 0 },
+    { dias: '61 - 90', rate_a: '5.15', rate_b: '5.25', pos: 1 },
+    { dias: '91 - 120', rate_a: '5.50', rate_b: '5.75', pos: 2 },
+    { dias: '121 - 180', rate_a: '5.85', rate_b: '6.30', pos: 3 },
+    { dias: '181 - 270', rate_a: '6.90', rate_b: '7.20', pos: 4 },
+    { dias: '271 - 360', rate_a: '7.60', rate_b: '7.90', pos: 5 },
+  ];*/
+
+//alco fecha septiembre 2023
+  //rate a - pago mensual  nominal
+  //rate b - pago vencimiento nominal
+  /*datos = [
+    { dias: '30 - 60', rate_a: '0.00', rate_b: '5.40', pos: 0 },
+    { dias: '61 - 90', rate_a: '5.20', rate_b: '5.80', pos: 1 },
+    { dias: '91 - 120', rate_a: '5.60', rate_b: '6.30', pos: 2 },
+    { dias: '121 - 180', rate_a: '5.90', rate_b: '6.60', pos: 3 },
+    { dias: '181 - 270', rate_a: '6.90', rate_b: '7.40', pos: 4 },
+    { dias: '271 - 360', rate_a: '7.60', rate_b: '8.10', pos: 5 },
+  ];*/
+
+  //alco fecha octubre 2023
+  //rate a - pago mensual  nominal
+  //rate b - pago vencimiento nominal
+  datos = [
+    { dias: '30 - 60', rate_a: '5.18', rate_b: '5.40', pos: 0 },
+    { dias: '61 - 90', rate_a: '5.55', rate_b: '5.80', pos: 1 },
+    { dias: '91 - 120', rate_a: '6.00', rate_b: '6.30', pos: 2 },
+    { dias: '121 - 180', rate_a: '6.25', rate_b: '6.60', pos: 3 },
+    { dias: '181 - 270', rate_a: '6.94', rate_b: '7.40', pos: 4 },
+    { dias: '271 - 360', rate_a: '7.50', rate_b: '8.10', pos: 5 },
   ];
 
   typeAhorro = [
@@ -196,8 +265,8 @@ export class DpfComponent implements OnInit {
       this.ratea = x[0].rate_a;
       this.rateb = x[0].rate_b;
     } else if (this.months > 360) {
-      this.ratea = 8.7;
-      this.rateb = 9.0;
+      this.ratea = 8.6;
+      this.rateb = 9.5;
     }
 
     //Aqui hago el calculo

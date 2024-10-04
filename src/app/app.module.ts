@@ -13,6 +13,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     AngularFireModule.initializeApp(environment.firebase),
     SimuladorCreditoModule,
     SimuladorCreditoRoutingModule,
-    AngularFireStorageModule
-  ],
-  exports: [
+    AngularFireStorageModule,
     FormsModule
   ],
+  /*exports: [
+    FormsModule
+  ],*/
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-EC' }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

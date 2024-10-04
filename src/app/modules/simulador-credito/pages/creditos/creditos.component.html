@@ -1,37 +1,66 @@
 <form>
   <div class="form-row">
-    <div class=" form-group col-lg-2 col-md2 col-sm-2 col-xs-2 m-b-0">
+    <div class="form-group col-lg-2 col-md2 col-sm-2 col-xs-2 m-b-0"></div>
+
+    <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-3 m-b-0">
+      <label class="rg-label"
+        ><i class="fas fa-sort-amount-up"></i>&nbsp; Monto a solicitar<span
+          >*</span
+        ></label
+      >
+      <input
+        type="number"
+        min="0"
+        step="0.01"
+        class="form-control rg-input"
+        [(ngModel)]="capital"
+        name="capital"
+        (change)="calculateMinCapital($event)"
+      />
     </div>
 
-    <div class=" form-group col-lg-3 col-md-3 col-sm-3 col-xs-3  m-b-0 ">
-      <label class="rg-label "><i class="fas fa-sort-amount-up"></i>&nbsp; Monto a solicitar<span>*</span></label>
-      <input type="number" min="0" step="0.01" class="form-control rg-input" [(ngModel)]="capital" name=capital
-        (change)="calculateMinCapital($event)" />
+    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-2 m-b-0">
+      <label class="rg-label"
+        ><i class="fas fa-calendar-alt"></i>&nbsp; Cuotas<span>*</span></label
+      >
+      <input
+        type="number"
+        min="0"
+        class="form-control rg-input"
+        [(ngModel)]="plazo"
+        name="plazo"
+        (change)="calculateMinMax($event)"
+      />
     </div>
-
-    <div class=" form-group col-lg-2 col-md-2 col-sm-2 col-xs-2 m-b-0 ">
-      <label class="rg-label "><i class="fas fa-calendar-alt"></i>&nbsp; Cuotas<span>*</span></label>
-      <input type="number" min="0" class="form-control rg-input" [(ngModel)]="plazo" name=plazo
-        (change)="calculateMinMax($event)" />
-    </div>
-
 
     <div class="form-row">
-      <div class=" form-group col-12 m-b-0 ">
-        <label class="rg-label"><i class="fas fa-piggy-bank"></i>&nbsp; Línea de crédito </label>
-        <select [(ngModel)]="lineCredit" class="form-control" name=lineCredit (change)="rateSelected()">
-          <option value="" selected disabled>Selecciona tu línea de crédito</option>
-          <option *ngFor="let lineC of lineCreditList" [ngValue]="lineC.rate ">{{ lineC.nombre }}</option>
+      <div class="form-group col-12 m-b-0">
+        <label class="rg-label"
+          ><i class="fas fa-piggy-bank"></i>&nbsp; Línea de crédito
+        </label>
+        <select
+          [(ngModel)]="lineCredit"
+          class="form-control"
+          name="lineCredit"
+          (change)="rateSelected()"
+        >
+          <option value="" selected disabled>
+            Selecciona tu línea de crédito
+          </option>
+          <option *ngFor="let lineC of lineCreditList" [ngValue]="lineC.rate">
+            {{ lineC.nombre }}
+          </option>
         </select>
-
       </div>
     </div>
-    <div class=" form-group col-lg-2 col-md2 col-sm-2 col-xs-2 m-b-0"></div>
+    <div class="form-group col-lg-2 col-md2 col-sm-2 col-xs-2 m-b-0"></div>
   </div>
 
   <div class="form-raw botonesCredito">
-
-    <button mat-raised-button color="primary" (click)="calculeCredit()">Calcular</button> &nbsp;
+    <button mat-raised-button color="primary" (click)="calculeCredit()">
+      Calcular
+    </button>
+    &nbsp;
     <button mat-raised-button color="primary" (click)="reset()">Limpiar</button>
   </div>
 </form>
@@ -40,64 +69,65 @@
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- num cuota Column -->
     <ng-container matColumnDef="numCuotas">
-      <th mat-header-cell *matHeaderCellDef> Nº cuotas </th>
-      <td mat-cell *matCellDef="let row"> {{row.numCuotas}} </td>
+      <th mat-header-cell *matHeaderCellDef>Nº cuotas</th>
+      <td mat-cell *matCellDef="let row">{{ row.numCuotas }}</td>
     </ng-container>
 
     <!-- cuota Column -->
     <ng-container matColumnDef="capitalReducido">
-      <th mat-header-cell *matHeaderCellDef> Capital Reducido </th>
-      <td mat-cell *matCellDef="let row"> {{row.capitalReducido}} </td>
+      <th mat-header-cell *matHeaderCellDef>Capital Reducido</th>
+      <td mat-cell *matCellDef="let row">{{ row.capitalReducido }}</td>
     </ng-container>
 
     <!-- deuda Column -->
     <ng-container matColumnDef="interes">
-      <th mat-header-cell *matHeaderCellDef> Interés </th>
-      <td mat-cell *matCellDef="let row"> {{row.interes}} </td>
+      <th mat-header-cell *matHeaderCellDef>Interés</th>
+      <td mat-cell *matCellDef="let row">{{ row.interes }}</td>
     </ng-container>
 
     <!-- abonoCap Column -->
     <ng-container matColumnDef="abonoCap">
-      <th mat-header-cell *matHeaderCellDef> Abono Capital </th>
-      <td mat-cell *matCellDef="let row"> {{row.abonoCap}} </td>
+      <th mat-header-cell *matHeaderCellDef>Abono Capital</th>
+      <td mat-cell *matCellDef="let row">{{ row.abonoCap }}</td>
     </ng-container>
 
     <!-- cuotasCre Column -->
     <ng-container matColumnDef="cuota">
-      <th mat-header-cell *matHeaderCellDef> Cuota </th>
-      <td mat-cell *matCellDef="let row"> {{row.cuota}} </td>
+      <th mat-header-cell *matHeaderCellDef>Cuota</th>
+      <td mat-cell *matCellDef="let row">{{ row.cuota }}</td>
     </ng-container>
 
     <!-- amortizacion Column -->
     <ng-container matColumnDef="seguroDes">
-      <th mat-header-cell *matHeaderCellDef> Seguro Desgra. </th>
-      <td mat-cell *matCellDef="let row"> {{row.seguroDes}} </td>
+      <th mat-header-cell *matHeaderCellDef>Seguro Desgra.</th>
+      <td mat-cell *matCellDef="let row">{{ row.seguroDes }}</td>
     </ng-container>
 
     <!-- interes Column -->
     <ng-container matColumnDef="avpi">
-      <th mat-header-cell *matHeaderCellDef> Avpi </th>
-      <td mat-cell *matCellDef="let row"> {{row.avpi}} </td>
+      <th mat-header-cell *matHeaderCellDef>Avpi</th>
+      <td mat-cell *matCellDef="let row">{{ row.avpi }}</td>
     </ng-container>
 
     <!-- seguroD Column -->
     <ng-container matColumnDef="ahorro">
-      <th mat-header-cell *matHeaderCellDef>Ahorro programado 6%
-        <i class="far fa-question-circle" matTooltip="Este Valor sera entregado al finalizar el crédito"></i>
-
+      <th mat-header-cell *matHeaderCellDef>
+        Ahorro programado 6%
+        <i
+          class="far fa-question-circle"
+          matTooltip="Este Valor sera entregado al finalizar el crédito"
+        ></i>
       </th>
-      <td mat-cell *matCellDef="let row"> {{row.ahorro}} </td>
+      <td mat-cell *matCellDef="let row">{{ row.ahorro }}</td>
     </ng-container>
 
     <!-- ahorroPro Column -->
     <ng-container matColumnDef="cuotaFinal">
-      <th mat-header-cell *matHeaderCellDef> Cuota Final </th>
-      <td mat-cell *matCellDef="let row"> {{row.cuotaFinal}} </td>
+      <th mat-header-cell *matHeaderCellDef>Cuota Final</th>
+      <td mat-cell *matCellDef="let row">{{ row.cuotaFinal }}</td>
     </ng-container>
 
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-
 </div>

@@ -52,10 +52,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatDividerModule,
     HttpClientModule,
     MatTooltipModule
-    
-    
-    
-
   ], 
   providers: [
     MatDatepickerModule,
